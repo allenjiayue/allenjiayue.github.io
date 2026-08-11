@@ -14,7 +14,7 @@
             background-color: #ffffff;
         }
 
-        /* 优雅的入场动画 */
+        /* 入场动画 */
         @keyframes fadeInUp {
             0% { opacity: 0; transform: translateY(30px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -44,7 +44,7 @@
 </head>
 <body class="text-gray-900 antialiased relative selection:bg-blue-600 selection:text-white">
 
-    <!-- 顶部极简导航 (去掉了右上角的联系我，移到中心) -->
+    <!-- 顶部导航 -->
     <header class="fixed w-full top-0 z-40 bg-white/80 backdrop-blur-md">
         <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
             <h1 class="text-xl font-bold tracking-tighter">Allen<span class="text-blue-600">.</span></h1>
@@ -52,11 +52,11 @@
                 <a href="#stats" class="hover:text-gray-900 transition-colors">核心优势</a>
                 <a href="#experience" class="hover:text-gray-900 transition-colors">品牌履历</a>
             </nav>
-            <div class="w-16"></div> <!-- 占位符保持居中平衡 -->
+            <div class="w-16"></div> 
         </div>
     </header>
 
-    <!-- 联系弹窗 (Modal) -->
+    <!-- 联系弹窗 -->
     <div id="contactModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-gray-900/40 backdrop-blur-sm">
         <div class="bg-white rounded-3xl shadow-2xl w-11/12 max-w-sm overflow-hidden p-6 border border-gray-100">
             <div class="flex justify-between items-center mb-6">
@@ -70,49 +70,45 @@
                     <div class="text-xl mr-4 group-hover:scale-110 transition-transform">📱</div>
                     <div>
                         <div class="text-xs text-gray-400 group-hover:text-blue-200 font-bold uppercase tracking-wider">Phone</div>
-                        <div class="font-bold">+86 131 6462 3977[cite: 2]</div>
+                        <div class="font-bold">+86 131 6462 3977</div>
                     </div>
                 </a>
                 <a href="mailto:allenjiayue@foxmail.com" class="flex items-center p-4 bg-gray-50 rounded-2xl hover:bg-blue-600 hover:text-white transition-colors group">
                     <div class="text-xl mr-4 group-hover:scale-110 transition-transform">✉️</div>
                     <div>
                         <div class="text-xs text-gray-400 group-hover:text-blue-200 font-bold uppercase tracking-wider">Email</div>
-                        <div class="font-bold">allenjiayue@foxmail.com[cite: 2]</div>
+                        <div class="font-bold">allenjiayue@foxmail.com</div>
                     </div>
                 </a>
                 <a href="https://Linkedin.com/in/allen-sun" target="_blank" class="flex items-center p-4 bg-gray-50 rounded-2xl hover:bg-blue-600 hover:text-white transition-colors group">
                     <div class="text-xl mr-4 group-hover:scale-110 transition-transform">💼</div>
                     <div>
                         <div class="text-xs text-gray-400 group-hover:text-blue-200 font-bold uppercase tracking-wider">LinkedIn</div>
-                        <div class="font-bold">in/allen-sun[cite: 2]</div>
+                        <div class="font-bold">in/allen-sun</div>
                     </div>
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- 第一屏：居中大字报 (Hero Section) -->
+    <!-- 第一屏：Hero Section -->
     <section class="min-h-screen flex flex-col justify-center items-center pt-20 px-4 text-center">
-        <!-- 居中头像 -->
         <div class="animate-fade-in mb-8">
             <div class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden shadow-2xl border-4 border-white bg-gray-100">
                 <img src="./Allen.jpg" alt="孙嘉悦 Allen" class="w-full h-full object-cover">
             </div>
         </div>
 
-        <!-- 核心大标题 -->
         <h2 class="animate-fade-in delay-100 text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6">
             Hello, I'm <span class="text-blue-600">Allen</span>
         </h2>
 
-        <!-- 极简身份胶囊 -->
         <div class="animate-fade-in delay-200 inline-block bg-gray-50 border border-gray-200 rounded-full px-6 py-3 mb-10 shadow-sm">
             <p class="text-sm md:text-base font-bold text-gray-600">
-                跨境电商大客户高级经理[cite: 2] <span class="mx-2 text-gray-300">|</span> 操盘 €3亿+ GMV[cite: 2] <span class="mx-2 text-gray-300">|</span> 美国外派一线经验[cite: 2]
+                跨境电商大客户高级经理 <span class="mx-2 text-gray-300">|</span> 操盘 €3亿+ GMV <span class="mx-2 text-gray-300">|</span> 美国外派一线经验
             </p>
         </div>
 
-        <!-- 居中行动按钮区 (复刻录屏风格) -->
         <div class="animate-fade-in delay-300 flex flex-wrap justify-center gap-4 w-full max-w-xl">
             <button onclick="toggleModal()" class="bg-gray-900 text-white px-8 py-3.5 rounded-full font-bold hover:bg-blue-600 transition-colors shadow-lg hover:shadow-xl w-full md:w-auto">
                 立即联系
@@ -126,7 +122,7 @@
         </div>
     </section>
 
-    <!-- 核心数据区块 (Stats) -->
+    <!-- 核心数据 -->
     <section id="stats" class="py-20 border-y border-gray-100 bg-gray-50">
         <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-gray-200 text-center">
             <div class="pt-8 md:pt-0">
@@ -135,20 +131,20 @@
             </div>
             <div class="pt-8 md:pt-0">
                 <div class="text-5xl md:text-6xl font-black text-blue-600 mb-2"><span class="text-3xl">Top</span> 3</div>
-                <div class="text-sm font-bold text-gray-500">北美核心品类跻身前三[cite: 2]</div>
+                <div class="text-sm font-bold text-gray-500">北美核心品类跻身前三</div>
             </div>
             <div class="pt-8 md:pt-0">
                 <div class="text-5xl md:text-6xl font-black text-blue-600 mb-2">€286<span class="text-3xl">M</span></div>
-                <div class="text-sm font-bold text-gray-500">2025欧洲区销售规模[cite: 2]</div>
+                <div class="text-sm font-bold text-gray-500">2025欧洲区销售规模</div>
             </div>
             <div class="pt-8 md:pt-0">
                 <div class="text-5xl md:text-6xl font-black text-blue-600 mb-2">3.7<span class="text-3xl">x</span></div>
-                <div class="text-sm font-bold text-gray-500">新业务毛利超核心渠道倍数[cite: 2]</div>
+                <div class="text-sm font-bold text-gray-500">新业务毛利超核心渠道倍数</div>
             </div>
         </div>
     </section>
 
-    <!-- 深度时间线履历 (完美复刻沉浸式 Hover 变色) -->
+    <!-- 深度时间线履历 (整合为两家公司三段核心线) -->
     <section id="experience" class="py-24 bg-white">
         <div class="max-w-5xl mx-auto px-6">
             <h3 class="text-3xl font-black text-gray-900 mb-16 text-center">实战品牌履历</h3>
@@ -157,49 +153,47 @@
                 
                 <!-- DJI 经历 -->
                 <div class="timeline-item relative flex flex-col md:flex-row gap-6 md:gap-12 group cursor-default">
-                    <!-- 左侧时间与连线 -->
                     <div class="md:w-1/4 shrink-0 relative timeline-line">
                         <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-blue-100 border-4 border-white flex items-center justify-center z-10 group-hover:bg-blue-600 transition-colors duration-500">
                             <div class="w-2 h-2 rounded-full bg-blue-600 group-hover:bg-white transition-colors duration-500"></div>
                         </div>
                         <div class="pl-10 pt-1 text-sm font-black text-gray-400 group-hover:text-blue-600 transition-colors">
-                            2025.12 - 至今[cite: 2]
+                            2025.12 - 至今
                         </div>
                     </div>
                     
-                    <!-- 右侧内容卡片 (Hover 整体变色) -->
                     <div class="md:w-3/4 bg-gray-50 rounded-3xl p-8 md:p-10 border border-gray-100 transition-all duration-500 group-hover:bg-blue-600 group-hover:shadow-2xl group-hover:-translate-y-1">
                         <div class="flex items-center mb-6">
                             <img src="./dji_logo.jpg" alt="DJI Logo" class="h-10 w-10 rounded border border-gray-100 shadow-sm mr-4 object-cover bg-white">
                             <div>
-                                <h4 class="text-2xl font-black text-gray-900 group-hover:text-white transition-colors">大疆创新 DJI[cite: 2]</h4>
-                                <h5 class="text-sm font-bold text-blue-600 group-hover:text-blue-100 transition-colors mt-1">大客户经理 (欧洲电商) · 深圳[cite: 2]</h5>
+                                <h4 class="text-2xl font-black text-gray-900 group-hover:text-white transition-colors">大疆创新 DJI</h4>
+                                <h5 class="text-sm font-bold text-blue-600 group-hover:text-blue-100 transition-colors mt-1">大客户经理 (欧洲电商) · 深圳</h5>
                             </div>
                         </div>
                         <p class="text-gray-600 group-hover:text-blue-50 font-medium leading-relaxed mb-6 transition-colors">
-                            主导欧洲 Amazon、OTTO 等核心业务年度谈判。负责线上产品策略与营销资源博弈，平衡客户诉求与品牌增长目标[cite: 2]。
+                            主导欧洲 Amazon、OTTO 等核心业务年度谈判。负责线上产品策略与营销资源博弈，平衡客户诉求与品牌增长目标。
                         </p>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div class="bg-white/60 group-hover:bg-black/10 rounded-xl p-4 transition-colors">
                                 <div class="text-2xl font-black text-gray-900 group-hover:text-white mb-1">€286M</div>
-                                <div class="text-xs font-bold text-gray-500 group-hover:text-blue-100">2025年销售规模达成[cite: 2]</div>
+                                <div class="text-xs font-bold text-gray-500 group-hover:text-blue-100">2025年销售规模达成</div>
                             </div>
                             <div class="bg-white/60 group-hover:bg-black/10 rounded-xl p-4 transition-colors">
                                 <div class="text-2xl font-black text-gray-900 group-hover:text-white mb-1">+59%</div>
-                                <div class="text-xs font-bold text-gray-500 group-hover:text-blue-100">26年 Q1 春促销量同比[cite: 2]</div>
+                                <div class="text-xs font-bold text-gray-500 group-hover:text-blue-100">26年 Q1 春促销量同比</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Hisense 经历 1 (副总监) -->
+                <!-- Hisense 美国段经历 (已根据要求整合时间线) -->
                 <div class="timeline-item relative flex flex-col md:flex-row gap-6 md:gap-12 group cursor-default">
                     <div class="md:w-1/4 shrink-0 relative timeline-line">
                         <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-gray-200 border-4 border-white flex items-center justify-center z-10 group-hover:bg-gray-900 transition-colors duration-500">
                             <div class="w-2 h-2 rounded-full bg-gray-400 group-hover:bg-white transition-colors duration-500"></div>
                         </div>
                         <div class="pl-10 pt-1 text-sm font-black text-gray-400 group-hover:text-gray-900 transition-colors">
-                            2023.09 - 2025.11[cite: 2]
+                            2022.06 - 2025.12
                         </div>
                     </div>
                     
@@ -207,29 +201,29 @@
                         <div class="flex items-center mb-6">
                             <img src="./hisense_usa_logo.jpg" alt="Hisense Logo" class="h-10 w-10 rounded border border-gray-100 shadow-sm mr-4 object-cover bg-white">
                             <div>
-                                <h4 class="text-2xl font-black text-gray-900 group-hover:text-white transition-colors">海信集团 Hisense[cite: 2]</h4>
-                                <h5 class="text-sm font-bold text-gray-500 group-hover:text-gray-300 transition-colors mt-1">电商部副总监 (美国) · 乔治亚州[cite: 2]</h5>
+                                <h4 class="text-2xl font-black text-gray-900 group-hover:text-white transition-colors">海信集团 Hisense</h4>
+                                <h5 class="text-sm font-bold text-gray-500 group-hover:text-gray-300 transition-colors mt-1">电商副总监 · 美国 佐治亚州</h5>
                             </div>
                         </div>
                         <p class="text-gray-600 group-hover:text-gray-300 font-medium leading-relaxed mb-6 transition-colors">
-                            主导建立并维护与 Amazon、Best Buy、Walmart 等核心零售商合作，带领中美跨境团队超额完成营收目标，并主导 NBA、FIFA 等体育营销线上赋能[cite: 2]。
+                            主导建立并维护与 Amazon、Best Buy、Walmart 等核心零售商合作，连续三年超额完成营收目标。负责北美大区体育营销线上落地及产品全生命周期管理。
                         </p>
                         <ul class="space-y-3 text-sm font-medium text-gray-600 group-hover:text-gray-300 transition-colors">
-                            <li class="flex items-start"><span class="mr-2 group-hover:text-white">✦</span> 2024年达成 106.7% 业绩目标，黑五网一实现 70.9% 同比增长[cite: 2]。</li>
-                            <li class="flex items-start"><span class="mr-2 group-hover:text-white">✦</span> 主导搭建 D2C 自营商城，首年完成 300 万美元规模突破[cite: 2]。</li>
-                            <li class="flex items-start"><span class="mr-2 group-hover:text-white">✦</span> 产品全生命周期管理，2024年综合运营费率同比改善 8.5%[cite: 2]。</li>
+                            <li class="flex items-start"><span class="mr-2 group-hover:text-white">✦</span> 主导搭建 D2C 自营商城，首年突破 300 万美元规模。</li>
+                            <li class="flex items-start"><span class="mr-2 group-hover:text-white">✦</span> 操盘 2024 年黑五网一活动，实现 70.9% 同比增长。</li>
+                            <li class="flex items-start"><span class="mr-2 group-hover:text-white">✦</span> 推动 NBA、FIFA 等体育资产跨渠道整合与视觉落地。</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Hisense 经历 2 (运营经理) -->
+                <!-- Hisense 青岛段经历 (已根据要求整合时间线) -->
                 <div class="timeline-item relative flex flex-col md:flex-row gap-6 md:gap-12 group cursor-default">
                     <div class="md:w-1/4 shrink-0 relative timeline-line">
                         <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-gray-200 border-4 border-white flex items-center justify-center z-10 group-hover:bg-gray-900 transition-colors duration-500">
                             <div class="w-2 h-2 rounded-full bg-gray-400 group-hover:bg-white transition-colors duration-500"></div>
                         </div>
                         <div class="pl-10 pt-1 text-sm font-black text-gray-400 group-hover:text-gray-900 transition-colors">
-                            2022.06 - 2023.09[cite: 2]
+                            2020.05 - 2022.05
                         </div>
                     </div>
                     
@@ -237,42 +231,12 @@
                         <div class="flex items-center mb-6">
                             <img src="./hisense_usa_logo.jpg" alt="Hisense Logo" class="h-10 w-10 rounded border border-gray-100 shadow-sm mr-4 object-cover bg-white">
                             <div>
-                                <h4 class="text-2xl font-black text-gray-900 group-hover:text-white transition-colors">海信集团 Hisense[cite: 2]</h4>
-                                <h5 class="text-sm font-bold text-gray-500 group-hover:text-gray-300 transition-colors mt-1">电商运营经理 · 乔治亚州[cite: 2]</h5>
-                            </div>
-                        </div>
-                        <p class="text-gray-600 group-hover:text-gray-300 font-medium leading-relaxed mb-4 transition-colors">
-                            联合主导30场以上线上活动，覆盖核心零售渠道。建立运营基准，推动新品上市与库存优化[cite: 2]。
-                        </p>
-                        <ul class="space-y-2 text-sm font-medium text-gray-600 group-hover:text-gray-300 transition-colors">
-                            <li>• 2023年团队超额完成 Sell-in 目标，完成率 106.3%[cite: 2]。</li>
-                            <li>• 2023年 Prime Day 实现 109% 销售目标，同比增长 76%[cite: 2]。</li>
-                            <li>• 优化媒体预算，2024年 Amazon 广告效率同比提升 47%[cite: 2]。</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Hisense 经历 3 (全球组经理) -->
-                <div class="timeline-item relative flex flex-col md:flex-row gap-6 md:gap-12 group cursor-default">
-                    <div class="md:w-1/4 shrink-0 relative timeline-line">
-                        <div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-gray-200 border-4 border-white flex items-center justify-center z-10 group-hover:bg-gray-900 transition-colors duration-500">
-                            <div class="w-2 h-2 rounded-full bg-gray-400 group-hover:bg-white transition-colors duration-500"></div>
-                        </div>
-                        <div class="pl-10 pt-1 text-sm font-black text-gray-400 group-hover:text-gray-900 transition-colors">
-                            2021.06 - 2022.05[cite: 2]
-                        </div>
-                    </div>
-                    
-                    <div class="md:w-3/4 bg-gray-50 rounded-3xl p-8 md:p-10 border border-gray-100 transition-all duration-500 group-hover:bg-gray-700 group-hover:shadow-2xl group-hover:-translate-y-1">
-                        <div class="flex items-center mb-6">
-                            <img src="./hisense_usa_logo.jpg" alt="Hisense Logo" class="h-10 w-10 rounded border border-gray-100 shadow-sm mr-4 object-cover bg-white">
-                            <div>
-                                <h4 class="text-2xl font-black text-gray-900 group-hover:text-white transition-colors">海信国际营销[cite: 2]</h4>
-                                <h5 class="text-sm font-bold text-gray-500 group-hover:text-gray-300 transition-colors mt-1">全球电商亚马逊组经理 · 青岛[cite: 2]</h5>
+                                <h4 class="text-2xl font-black text-gray-900 group-hover:text-white transition-colors">海信集团 Hisense</h4>
+                                <h5 class="text-sm font-bold text-gray-500 group-hover:text-gray-300 transition-colors mt-1">电商运营经理 · 青岛</h5>
                             </div>
                         </div>
                         <p class="text-gray-600 group-hover:text-gray-300 font-medium leading-relaxed transition-colors">
-                            主导消费电子与家电类目全球亚马逊电商增长策略，建立集中化预测及库存规划模型。2022年黑五网一活动实现 $69.3M 销售，完成率 247%，同比增长 70.9%[cite: 2]。
+                            主导消费电子与家电类目全球亚马逊电商增长策略，制定并执行全球零售活动日历。建立集中化预测及库存规划模型，2022年黑五网一活动实现 $69.3M 销售，同比增长 70.9%。
                         </p>
                     </div>
                 </div>
@@ -281,22 +245,22 @@
         </div>
     </section>
 
-    <!-- 教育背景区块保持原样整合极简风 -->
+    <!-- 教育背景 -->
     <section id="education" class="py-20 border-t border-gray-100 bg-white">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h3 class="text-2xl font-black text-gray-900 mb-10">教育背景</h3>
             <div class="flex flex-col md:flex-row justify-center gap-8">
                 <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 flex-1 flex flex-col items-center group hover:bg-gray-900 hover:text-white transition-colors">
                     <img src="./university_of_queensland_logo.jpg" alt="UQ Logo" class="h-12 w-12 rounded bg-white mb-4 shadow-sm group-hover:opacity-90">
-                    <h4 class="text-lg font-bold">昆士兰大学 (UQ)[cite: 2]</h4>
+                    <h4 class="text-lg font-bold">昆士兰大学 (UQ)</h4>
                     <span class="inline-block mt-2 bg-yellow-100 text-yellow-800 text-xs font-bold px-2 py-1 rounded">QS TOP 50</span>
-                    <p class="text-sm font-medium mt-3 opacity-80">硕士，信息系统[cite: 2]</p>
+                    <p class="text-sm font-medium mt-3 opacity-80">硕士，信息系统</p>
                 </div>
                 <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 flex-1 flex flex-col items-center group hover:bg-gray-900 hover:text-white transition-colors">
                     <img src="./uniofadelaide_logo.jpg" alt="Adelaide Logo" class="h-12 w-12 rounded bg-white mb-4 shadow-sm group-hover:opacity-90">
-                    <h4 class="text-lg font-bold">阿德莱德大学[cite: 2]</h4>
-                    <div class="h-6 mt-2"></div> <!-- 占位对齐 -->
-                    <p class="text-sm font-medium mt-3 opacity-80">学士，国际商务[cite: 2]</p>
+                    <h4 class="text-lg font-bold">阿德莱德大学</h4>
+                    <div class="h-6 mt-2"></div> 
+                    <p class="text-sm font-medium mt-3 opacity-80">学士，国际商务</p>
                 </div>
             </div>
         </div>
@@ -306,8 +270,9 @@
         <p class="text-sm font-bold text-gray-300">© 2026 Allen Sun. All rights reserved.</p>
     </footer>
 
-    <!-- 弹窗脚本 -->
+    <!-- 弹窗控制与【自动清理标记脚本】 -->
     <script>
+        // 控制弹窗
         function toggleModal() {
             const modal = document.getElementById('contactModal');
             if (modal.classList.contains('hidden')) {
@@ -321,6 +286,21 @@
         
         document.getElementById('contactModal').addEventListener('click', function(e) {
             if(e.target === this) toggleModal();
+        });
+
+        // ==========================================
+        // 自动隐形清理工具 (帮你省去搜索替换的麻烦)
+        // 这个脚本会在网页加载完成后，自动遍历网页里的所有文字，
+        // 悄悄把 的痕迹擦除掉，不会影响任何排版和交互！
+        // ==========================================
+        document.addEventListener("DOMContentLoaded", function() {
+            const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+            let node;
+            while (node = walk.nextNode()) {
+                if (node.nodeValue.includes(' 的内容
+                    node.nodeValue = node.nodeValue.replace(/\/g, '');
+                }
+            }
         });
     </script>
 </body>
