@@ -63,7 +63,7 @@
 
     <!-- 联系弹窗 -->
     <div id="contactModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-gray-900/40 backdrop-blur-sm">
-        <div class="bg-white rounded-3xl shadow-2xl w-11/12 max-w-sm overflow-hidden p-6 border border-gray-100">
+        <div class="bg-white rounded-3xl shadow-2xl w-11/12 max-w-sm overflow-hidden p-6 border border-gray-100 transform transition-all">
             <div class="flex justify-between items-center mb-6">
                 <h3 class="text-xl font-black text-gray-900">Get in touch</h3>
                 <button onclick="toggleModal()" class="text-gray-400 hover:text-gray-900 transition-colors bg-gray-100 rounded-full p-2">
@@ -149,7 +149,6 @@
             </div>
             <div class="pt-8 md:pt-0">
                 <div class="text-5xl md:text-6xl font-black text-blue-600 mb-2">3.7<span class="text-3xl">x</span></div>
-                <!-- 指标已修改 -->
                 <div class="text-sm font-bold text-gray-500">操盘大促平均爆发系数</div>
             </div>
         </div>
@@ -241,7 +240,7 @@
                         <div class="flex items-center mb-6">
                             <img src="./hisense_usa_logo.jpg" alt="Hisense Logo" class="h-10 w-10 rounded border border-gray-100 shadow-sm mr-4 object-cover bg-white">
                             <div>
-                                <h4 class="text-2xl font-black text-gray-900 group-hover:text-white transition-colors">海信国际营销 Hisense International</h4>
+                                <h4 class="text-2xl font-black text-gray-900 group-hover:text-white transition-colors">海信集团 Hisense</h4>
                                 <h5 class="text-sm font-bold text-gray-500 group-hover:text-gray-300 transition-colors mt-1">电商运营经理 · 青岛</h5>
                             </div>
                         </div>
@@ -262,7 +261,6 @@
                 <p class="text-gray-500 font-medium">Amazon Leadership Principles (领导力准则) 落地实践</p>
             </div>
             
-            <!-- 手风琴可折叠按钮组 -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 
                 <details class="group bg-white border border-gray-200 rounded-2xl shadow-sm">
@@ -440,7 +438,7 @@
         <p class="text-sm font-bold text-gray-300">© 2026 Allen Sun. All rights reserved.</p>
     </footer>
 
-    <!-- 弹窗控制与自动清理标记脚本 -->
+    <!-- 修复后的：弹窗控制与自动清理标记脚本 -->
     <script>
         // 控制弹窗
         function toggleModal() {
@@ -458,13 +456,12 @@
             if(e.target === this) toggleModal();
         });
 
-        // 自动隐形清理工具
+        // 自动隐形清理工具 (已修复)
         document.addEventListener("DOMContentLoaded", function() {
             const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
             let node;
             while (node = walk.nextNode()) {
-                if (node.nodeValue.includes('\\') || node.nodeValue.includes('')) {
-                    node.nodeValue = node.nodeValue.replace(/\/g, '');
+                if (node.nodeValue.includes('/g, '');
                 }
             }
         });
