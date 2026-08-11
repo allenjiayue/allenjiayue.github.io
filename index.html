@@ -40,6 +40,10 @@
             z-index: 0;
         }
         .timeline-item:last-child .timeline-line::before { display: none; }
+
+        /* 隐藏 details 默认箭头 */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
     </style>
 </head>
 <body class="text-gray-900 antialiased relative selection:bg-blue-600 selection:text-white">
@@ -51,6 +55,7 @@
             <nav class="hidden md:flex space-x-8 text-sm font-bold text-gray-500">
                 <a href="#stats" class="hover:text-gray-900 transition-colors">核心优势</a>
                 <a href="#experience" class="hover:text-gray-900 transition-colors">品牌履历</a>
+                <a href="#cases" class="hover:text-gray-900 transition-colors">实战案例</a>
             </nav>
             <div class="w-16"></div> 
         </div>
@@ -92,20 +97,25 @@
     </div>
 
     <!-- 第一屏：Hero Section -->
-    <section class="min-h-screen flex flex-col justify-center items-center pt-20 px-4 text-center">
-        <div class="animate-fade-in mb-8">
-            <div class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden shadow-2xl border-4 border-white bg-gray-100">
+    <section class="flex flex-col items-center pt-32 pb-20 px-4 text-center">
+        <div class="animate-fade-in mb-6">
+            <div class="w-32 h-32 md:w-36 md:h-36 mx-auto rounded-full overflow-hidden shadow-2xl border-4 border-white bg-gray-100">
                 <img src="./Allen.jpg" alt="孙嘉悦 Allen" class="w-full h-full object-cover">
             </div>
         </div>
 
-        <h2 class="animate-fade-in delay-100 text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6">
-            Hello, I'm <span class="text-blue-600">Allen</span>
-        </h2>
+        <div class="animate-fade-in delay-100 relative w-full h-16 md:h-24 flex justify-center items-center mb-6 cursor-default group">
+            <h2 class="absolute text-5xl md:text-7xl lg:text-8xl font-black tracking-tight transition-all duration-500 opacity-100 group-hover:opacity-0 group-hover:-translate-y-2 pointer-events-none whitespace-nowrap">
+                Hello, I'm <span class="text-blue-600">Allen</span>
+            </h2>
+            <h2 class="absolute text-5xl md:text-7xl lg:text-8xl font-black tracking-tight transition-all duration-500 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none whitespace-nowrap">
+                您好，我是<span class="text-blue-600">孙嘉悦</span>
+            </h2>
+        </div>
 
         <div class="animate-fade-in delay-200 inline-block bg-gray-50 border border-gray-200 rounded-full px-6 py-3 mb-10 shadow-sm">
             <p class="text-sm md:text-base font-bold text-gray-600">
-                跨境电商大客户高级经理 <span class="mx-2 text-gray-300">|</span> 操盘 €3亿+ GMV <span class="mx-2 text-gray-300">|</span> 美国外派一线经验
+                跨境电商大客户经理 <span class="mx-2 text-gray-300">|</span> 电商运营操盘 €3亿+ 年GMV <span class="mx-2 text-gray-300">|</span> 外派美国3.5年经验
             </p>
         </div>
 
@@ -139,7 +149,8 @@
             </div>
             <div class="pt-8 md:pt-0">
                 <div class="text-5xl md:text-6xl font-black text-blue-600 mb-2">3.7<span class="text-3xl">x</span></div>
-                <div class="text-sm font-bold text-gray-500">新业务毛利超核心渠道倍数</div>
+                <!-- 指标已修改 -->
+                <div class="text-sm font-bold text-gray-500">操盘大促平均爆发系数</div>
             </div>
         </div>
     </section>
@@ -150,7 +161,6 @@
             <h3 class="text-3xl font-black text-gray-900 mb-16 text-center">实战品牌履历</h3>
             
             <div class="space-y-10">
-                
                 <!-- DJI 经历 -->
                 <div class="timeline-item relative flex flex-col md:flex-row gap-6 md:gap-12 group cursor-default">
                     <div class="md:w-1/4 shrink-0 relative timeline-line">
@@ -231,7 +241,7 @@
                         <div class="flex items-center mb-6">
                             <img src="./hisense_usa_logo.jpg" alt="Hisense Logo" class="h-10 w-10 rounded border border-gray-100 shadow-sm mr-4 object-cover bg-white">
                             <div>
-                                <h4 class="text-2xl font-black text-gray-900 group-hover:text-white transition-colors">海信集团 Hisense</h4>
+                                <h4 class="text-2xl font-black text-gray-900 group-hover:text-white transition-colors">海信国际营销 Hisense International</h4>
                                 <h5 class="text-sm font-bold text-gray-500 group-hover:text-gray-300 transition-colors mt-1">电商运营经理 · 青岛</h5>
                             </div>
                         </div>
@@ -240,7 +250,161 @@
                         </p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- 实战案例 (Amazon Leadership Principles) -->
+    <section id="cases" class="py-24 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-black text-gray-900 mb-3">实战案例</h3>
+                <p class="text-gray-500 font-medium">Amazon Leadership Principles (领导力准则) 落地实践</p>
+            </div>
+            
+            <!-- 手风琴可折叠按钮组 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <details class="group bg-white border border-gray-200 rounded-2xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer p-5 font-bold text-gray-700 hover:text-blue-600 transition-colors">
+                        <span>顾客至尚 Customer Obsession</span>
+                        <span class="transition group-open:rotate-180 text-gray-400 group-hover:text-blue-600"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 mt-1">
+                        [待补充] 请在此处补充具体 Case...
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-gray-200 rounded-2xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer p-5 font-bold text-gray-700 hover:text-blue-600 transition-colors">
+                        <span>主人翁精神 Ownership</span>
+                        <span class="transition group-open:rotate-180 text-gray-400 group-hover:text-blue-600"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 mt-1">
+                        [待补充] 请在此处补充具体 Case...
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-gray-200 rounded-2xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer p-5 font-bold text-gray-700 hover:text-blue-600 transition-colors">
+                        <span>创新简化 Invent and Simplify</span>
+                        <span class="transition group-open:rotate-180 text-gray-400 group-hover:text-blue-600"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 mt-1">
+                        [待补充] 请在此处补充具体 Case...
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-gray-200 rounded-2xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer p-5 font-bold text-gray-700 hover:text-blue-600 transition-colors">
+                        <span>决策正确 Are Right, A Lot</span>
+                        <span class="transition group-open:rotate-180 text-gray-400 group-hover:text-blue-600"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 mt-1">
+                        [待补充] 请在此处补充具体 Case...
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-gray-200 rounded-2xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer p-5 font-bold text-gray-700 hover:text-blue-600 transition-colors">
+                        <span>好奇求知 Learn and Be Curious</span>
+                        <span class="transition group-open:rotate-180 text-gray-400 group-hover:text-blue-600"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 mt-1">
+                        [待补充] 请在此处补充具体 Case...
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-gray-200 rounded-2xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer p-5 font-bold text-gray-700 hover:text-blue-600 transition-colors">
+                        <span>选贤育能 Hire and Develop the Best</span>
+                        <span class="transition group-open:rotate-180 text-gray-400 group-hover:text-blue-600"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 mt-1">
+                        [待补充] 请在此处补充具体 Case...
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-gray-200 rounded-2xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer p-5 font-bold text-gray-700 hover:text-blue-600 transition-colors">
+                        <span>最高标准 Insist on the Highest Standards</span>
+                        <span class="transition group-open:rotate-180 text-gray-400 group-hover:text-blue-600"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 mt-1">
+                        [待补充] 请在此处补充具体 Case...
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-gray-200 rounded-2xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer p-5 font-bold text-gray-700 hover:text-blue-600 transition-colors">
+                        <span>远见卓识 Think Big</span>
+                        <span class="transition group-open:rotate-180 text-gray-400 group-hover:text-blue-600"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 mt-1">
+                        [待补充] 请在此处补充具体 Case...
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-gray-200 rounded-2xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer p-5 font-bold text-gray-700 hover:text-blue-600 transition-colors">
+                        <span>崇尚行动 Bias for Action</span>
+                        <span class="transition group-open:rotate-180 text-gray-400 group-hover:text-blue-600"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 mt-1">
+                        [待补充] 请在此处补充具体 Case...
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-gray-200 rounded-2xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer p-5 font-bold text-gray-700 hover:text-blue-600 transition-colors">
+                        <span>勤俭节约 Frugality</span>
+                        <span class="transition group-open:rotate-180 text-gray-400 group-hover:text-blue-600"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 mt-1">
+                        [待补充] 请在此处补充具体 Case...
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-gray-200 rounded-2xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer p-5 font-bold text-gray-700 hover:text-blue-600 transition-colors">
+                        <span>赢得信任 Earn Trust</span>
+                        <span class="transition group-open:rotate-180 text-gray-400 group-hover:text-blue-600"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 mt-1">
+                        [待补充] 请在此处补充具体 Case...
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-gray-200 rounded-2xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer p-5 font-bold text-gray-700 hover:text-blue-600 transition-colors">
+                        <span>刨根问底 Dive Deep</span>
+                        <span class="transition group-open:rotate-180 text-gray-400 group-hover:text-blue-600"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 mt-1">
+                        [待补充] 请在此处补充具体 Case...
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-gray-200 rounded-2xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer p-5 font-bold text-gray-700 hover:text-blue-600 transition-colors">
+                        <span>敢于谏言，服从大局 Have Backbone; Disagree and Commit</span>
+                        <span class="transition group-open:rotate-180 text-gray-400 group-hover:text-blue-600"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 mt-1">
+                        [待补充] 请在此处补充具体 Case...
+                    </div>
+                </details>
+
+                <details class="group bg-white border border-gray-200 rounded-2xl shadow-sm">
+                    <summary class="flex items-center justify-between cursor-pointer p-5 font-bold text-gray-700 hover:text-blue-600 transition-colors">
+                        <span>达成业绩 Deliver Results</span>
+                        <span class="transition group-open:rotate-180 text-gray-400 group-hover:text-blue-600"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></span>
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 mt-1">
+                        [待补充] 请在此处补充具体 Case...
+                    </div>
+                </details>
+                
             </div>
         </div>
     </section>
@@ -276,7 +440,7 @@
         <p class="text-sm font-bold text-gray-300">© 2026 Allen Sun. All rights reserved.</p>
     </footer>
 
-    <!-- 弹窗控制与【自动清理标记脚本】 -->
+    <!-- 弹窗控制与自动清理标记脚本 -->
     <script>
         // 控制弹窗
         function toggleModal() {
