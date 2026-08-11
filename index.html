@@ -24,12 +24,9 @@
             100% { opacity: 1; transform: translateY(0); }
         }
         .animate-fade-in { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-
+        
         .hover-text-container {
-            display: flex; justify-content: center; align-items: center; position: relative;
+            display: flex; justify-content: flex-start; align-items: center; position: relative;
         }
 
         /* 模态框动画 */
@@ -92,36 +89,35 @@
     <section class="relative bg-dots pt-16 pb-12">
         <div class="max-w-5xl mx-auto md:px-6">
             <!-- 领英风格背景横幅 + 头像 -->
-            <div class="relative bg-white md:rounded-2xl shadow-sm border border-gray-100 overflow-hidden animate-fade-in">
-                <!-- 顶部横幅 Banner (采用现代抽象插画风格背景) -->
+            <div class="bg-white md:rounded-2xl shadow-sm border border-gray-100 overflow-hidden animate-fade-in">
+                <!-- 顶部横幅 Banner -->
                 <div class="h-32 md:h-48 w-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=2029&auto=format&fit=crop');"></div>
                 
-                <!-- 头像叠加部分 -->
-                <div class="relative px-6 pb-6">
-                    <div class="absolute -top-16 left-6 md:left-10 w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white">
+                <!-- 个人信息区 (修复了重叠Bug，使用负边距排版) -->
+                <div class="px-6 pb-8">
+                    <!-- 头像 (向上偏移一半) -->
+                    <div class="relative -mt-16 md:-mt-20 mb-4 w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white">
                         <img src="./孙嘉悦 Allen.jpg" alt="孙嘉悦 Allen" class="w-full h-full object-cover">
                     </div>
                     
-                    <div class="mt-20 md:mt-24">
-                        <!-- 悬停切换文字特效 -->
-                        <div class="hover-text-container justify-start h-12 md:h-16 mb-2 cursor-default group">
-                            <h2 class="absolute left-0 text-3xl md:text-5xl font-black tracking-tight transition-all duration-500 opacity-100 group-hover:opacity-0 group-hover:-translate-y-2 pointer-events-none">
-                                Hello, I'm <span class="text-blue-600">Allen Sun</span>
-                            </h2>
-                            <h2 class="absolute left-0 text-3xl md:text-5xl font-black tracking-tight transition-all duration-500 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none">
-                                您好，我是<span class="text-blue-600">孙嘉悦</span>
-                            </h2>
-                        </div>
-                        
-                        <p class="text-gray-500 font-medium mb-6">大疆欧洲电商大客户经理 | E-commerce Key Account Manager</p>
-                        
-                        <!-- 全新优化的硬核标签 -->
-                        <div class="flex flex-wrap gap-2 text-xs md:text-sm font-medium text-gray-700">
-                            <span class="bg-blue-50 text-blue-700 px-3 py-1.5 rounded-md border border-blue-100">大疆欧洲电商大客户经理 消费电子&家电操盘 6年+</span>
-                            <span class="bg-gray-100 px-3 py-1.5 rounded-md border border-gray-200">主流欧美零售经验 Walmart/Amazon/Best Buy/Costco/Target/Otto/Joybuy/etc.</span>
-                            <span class="bg-orange-50 text-orange-700 px-3 py-1.5 rounded-md border border-orange-100">单账号 €3亿+ GMV操盘</span>
-                            <span class="bg-gray-100 px-3 py-1.5 rounded-md border border-gray-200">美国外派一线经验 3.5年</span>
-                        </div>
+                    <!-- 姓名文字特效 -->
+                    <div class="hover-text-container h-10 md:h-14 mb-2 md:mb-3 cursor-default group w-full">
+                        <h2 class="absolute left-0 text-3xl md:text-5xl font-black tracking-tight transition-all duration-500 opacity-100 group-hover:opacity-0 group-hover:-translate-y-2 pointer-events-none">
+                            Hello, I'm <span class="text-blue-600">Allen Sun</span>
+                        </h2>
+                        <h2 class="absolute left-0 text-3xl md:text-5xl font-black tracking-tight transition-all duration-500 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none">
+                            您好，我是<span class="text-blue-600">孙嘉悦</span>
+                        </h2>
+                    </div>
+                    
+                    <p class="text-gray-500 font-medium mb-6 mt-1 text-sm md:text-base">大疆欧洲电商大客户经理 | E-commerce Key Account Manager</p>
+                    
+                    <!-- 个人标签 -->
+                    <div class="flex flex-wrap gap-2 text-xs md:text-sm font-medium text-gray-700">
+                        <span class="bg-blue-50 text-blue-700 px-3 py-1.5 rounded-md border border-blue-100">大疆欧洲电商大客户经理 消费电子&家电操盘 6年+</span>
+                        <span class="bg-gray-100 px-3 py-1.5 rounded-md border border-gray-200">主流欧美零售经验 Walmart/Amazon/Best Buy/Costco/Target/Otto/Joybuy/etc.</span>
+                        <span class="bg-orange-50 text-orange-700 px-3 py-1.5 rounded-md border border-orange-100">单账号 €3亿+ GMV操盘</span>
+                        <span class="bg-gray-100 px-3 py-1.5 rounded-md border border-gray-200">美国外派一线经验 3.5年</span>
                     </div>
                 </div>
             </div>
@@ -150,82 +146,83 @@
         </div>
     </section>
 
-    <!-- 工作经历 (带 Logo) -->
+    <!-- 工作经历 (嵌入 Logo) -->
     <section id="experience" class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-6">
             <h3 class="text-2xl font-black text-gray-900 mb-12 border-b border-gray-100 pb-4">工作经历</h3>
             
             <div class="space-y-16">
                 <!-- DJI -->
-                <div class="relative pl-6 md:pl-0 border-l-2 md:border-l-0 border-gray-100">
-                    <div class="md:grid md:grid-cols-4 md:gap-8">
-                        <div class="md:col-span-1 mb-4 md:mb-0 text-sm font-bold text-gray-400 pt-1">
-                            2025.12 - 至今
+                <div class="relative md:grid md:grid-cols-4 md:gap-8">
+                    <div class="md:col-span-1 mb-4 md:mb-0 text-sm font-bold text-gray-400 pt-1">
+                        2025.12 - 至今
+                    </div>
+                    <div class="md:col-span-3">
+                        <div class="flex items-center mb-3">
+                            <img src="./dji_logo.jpg" alt="DJI Logo" class="h-10 w-10 rounded border border-gray-100 shadow-sm mr-4 object-cover">
+                            <h4 class="text-xl font-bold text-gray-900">大疆创新科技有限公司</h4>
                         </div>
-                        <div class="md:col-span-3">
-                            <!-- 公司抬头与 Logo -->
-                            <div class="flex items-center mb-2">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/DJI_Logo.svg" alt="DJI Logo" class="h-6 mr-3">
-                                <h4 class="text-xl font-bold text-gray-900">大疆创新科技有限公司</h4>
-                            </div>
-                            <h5 class="text-md font-medium text-blue-600 mb-4">大客户经理 (欧洲电商) · 深圳</h5>
-                            <p class="text-gray-600 leading-relaxed mb-4 text-sm">
-                                主导欧洲 Amazon/OTTO/Joybuy 等核心电商业务的年度谈判与操盘。通过价格策略优化、库存协同及流量运营，持续提升核心品类市场表现。
-                            </p>
-                            <ul class="list-none space-y-2 text-sm text-gray-600">
-                                <li class="flex items-start"><span class="text-gray-300 mr-2">▪</span> 实现欧洲业务 2025 年 €286M 销售规模。</li>
-                                <li class="flex items-start"><span class="text-gray-300 mr-2">▪</span> 2026 Q1 Spring Sale 期间销量同比提升 59%。</li>
-                                <li class="flex items-start"><span class="text-gray-300 mr-2">▪</span> 从 0 到 1 拓荒 Otto、Joybuy 等欧洲新兴增量渠道。</li>
-                            </ul>
-                        </div>
+                        <h5 class="text-md font-medium text-blue-600 mb-4">大客户经理 (欧洲电商) · 深圳</h5>
+                        <p class="text-gray-600 leading-relaxed mb-4 text-sm">
+                            主导欧洲 Amazon/OTTO/Joybuy 等核心电商业务的年度谈判与操盘。通过价格策略优化、库存协同及流量运营，持续提升核心品类市场表现。
+                        </p>
+                        <ul class="list-none space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start"><span class="text-gray-300 mr-2">▪</span> 实现欧洲业务 2025 年 €286M 销售规模。</li>
+                            <li class="flex items-start"><span class="text-gray-300 mr-2">▪</span> 2026 Q1 Spring Sale 期间销量同比提升 59%。</li>
+                            <li class="flex items-start"><span class="text-gray-300 mr-2">▪</span> 从 0 到 1 拓荒 Otto、Joybuy 等欧洲新兴增量渠道。</li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- Hisense -->
-                <div class="relative pl-6 md:pl-0 border-l-2 md:border-l-0 border-gray-100">
-                    <div class="md:grid md:grid-cols-4 md:gap-8">
-                        <div class="md:col-span-1 mb-4 md:mb-0 text-sm font-bold text-gray-400 pt-1">
-                            2020.05 - 2025.11
+                <div class="relative md:grid md:grid-cols-4 md:gap-8">
+                    <div class="md:col-span-1 mb-4 md:mb-0 text-sm font-bold text-gray-400 pt-1">
+                        2020.05 - 2025.11
+                    </div>
+                    <div class="md:col-span-3">
+                        <div class="flex items-center mb-3">
+                            <img src="./hisense_usa_logo.jpg" alt="Hisense Logo" class="h-10 w-10 rounded border border-gray-100 shadow-sm mr-4 object-cover">
+                            <h4 class="text-xl font-bold text-gray-900">海信集团</h4>
                         </div>
-                        <div class="md:col-span-3">
-                            <!-- 公司抬头与 Logo -->
-                            <div class="flex items-center mb-2">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Hisense_logo.svg" alt="Hisense Logo" class="h-5 mr-3">
-                                <h4 class="text-xl font-bold text-gray-900">海信集团</h4>
-                            </div>
-                            <h5 class="text-md font-medium text-gray-700 mb-4">电商部副总监 (美国) / 亚马逊全球组经理 · 美国/青岛</h5>
-                            <p class="text-gray-600 leading-relaxed mb-4 text-sm">
-                                建立并维护与 Amazon、Best Buy、Walmart 等核心零售商合作，连续三年超额完成营收目标。主导跨国团队及全渠道营销资产落地。
-                            </p>
-                            <ul class="list-none space-y-2 text-sm text-gray-600">
-                                <li class="flex items-start"><span class="text-gray-300 mr-2">▪</span> 2024 年黑五网一活动中实现 70.9% 同比增长。</li>
-                                <li class="flex items-start"><span class="text-gray-300 mr-2">▪</span> 搭建 D2C 自营商城，新业务首年突破 300 万美元规模。</li>
-                                <li class="flex items-start"><span class="text-gray-300 mr-2">▪</span> 主导 NBA、FIFA 等大型体育营销的北美线上闭环落地。</li>
-                            </ul>
-                        </div>
+                        <h5 class="text-md font-medium text-gray-700 mb-4">电商部副总监 (美国) / 亚马逊全球组经理 · 美国/青岛</h5>
+                        <p class="text-gray-600 leading-relaxed mb-4 text-sm">
+                            建立并维护与 Amazon、Best Buy、Walmart 等核心零售商合作，连续三年超额完成营收目标。主导跨国团队及全渠道营销资产落地。
+                        </p>
+                        <ul class="list-none space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start"><span class="text-gray-300 mr-2">▪</span> 2024 年黑五网一活动中实现 70.9% 同比增长。</li>
+                            <li class="flex items-start"><span class="text-gray-300 mr-2">▪</span> 搭建 D2C 自营商城，新业务首年突破 300 万美元规模。</li>
+                            <li class="flex items-start"><span class="text-gray-300 mr-2">▪</span> 主导 NBA、FIFA 等大型体育营销的北美线上闭环落地。</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 教育背景 (带排名标签) -->
+    <!-- 教育背景 (嵌入 Logo & 排名标签) -->
     <section id="education" class="py-20 bg-gray-50">
         <div class="max-w-4xl mx-auto px-6">
             <h3 class="text-2xl font-black text-gray-900 mb-10 border-b border-gray-200 pb-4">教育背景</h3>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                    <div class="flex flex-wrap items-center mb-3">
-                        <h4 class="text-lg font-bold text-gray-900 mr-3">昆士兰大学 (UQ)</h4>
-                        <!-- QS 排名标签 -->
-                        <span class="bg-yellow-50 text-yellow-700 text-xs font-bold px-2.5 py-1 rounded border border-yellow-200">QS世界大学排名 TOP 50</span>
+                <!-- UQ -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 relative">
+                    <div class="flex items-center mb-4">
+                        <img src="./university_of_queensland_logo.jpg" alt="UQ Logo" class="h-12 w-12 rounded border border-gray-100 mr-4 object-cover">
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900">昆士兰大学 (UQ)</h4>
+                            <span class="inline-block mt-1 bg-yellow-50 text-yellow-700 text-xs font-bold px-2 py-0.5 rounded border border-yellow-200">QS世界大学排名 TOP 50</span>
+                        </div>
                     </div>
                     <p class="text-sm font-medium text-gray-600 mb-1">硕士，信息系统 (Master of Information Systems)</p>
                     <p class="text-sm text-gray-400">2018 - 2019 | 成绩: 5.75</p>
                 </div>
 
+                <!-- Adelaide -->
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                    <h4 class="text-lg font-bold text-gray-900 mb-3">阿德莱德大学 (University of Adelaide)</h4>
+                    <div class="flex items-center mb-4">
+                        <img src="./uniofadelaide_logo.jpg" alt="Adelaide Logo" class="h-12 w-12 rounded border border-gray-100 mr-4 object-cover">
+                        <h4 class="text-lg font-bold text-gray-900 mt-1">阿德莱德大学</h4>
+                    </div>
                     <p class="text-sm font-medium text-gray-600 mb-1">学士，国际商务 (Bachelor of International Business)</p>
                     <p class="text-sm text-gray-400">2015 - 2017 | 成绩: 5.00</p>
                 </div>
